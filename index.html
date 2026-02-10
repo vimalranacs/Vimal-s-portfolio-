@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vimal Rana | Portfolio</title>
+    <meta name="description"
+        content="Vimal Rana - B.Tech CSE Student, AI Enthusiast, and Developer. Explore my projects and skills.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#" class="logo" data-value="VR.">VR.</a>
+        <ul class="nav-links">
+            <li><a href="#about" class="hover-link" data-value="About">About</a></li>
+            <li><a href="#projects" class="hover-link" data-value="Projects">Projects</a></li>
+            <li><a href="#experience" class="hover-link" data-value="Experience">Experience</a></li>
+            <li><a href="#skills" class="hover-link" data-value="Skills">Skills</a></li>
+            <li><a href="#contact" class="hover-link" data-value="Contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="hero-section">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <p class="mono-subtitle">&lt;Hello_World /&gt;</p>
+                <h1 class="glitch-text" data-value="Vimal Rana">Vimal Rana</h1>
+                <h2 class="mono-text">B.Tech CSE Student & <span class="highlight">Developer</span></h2>
+                <p class="description">Passionate about AI, content creation, and building impactful digital products.
+                    Constantly upgrading my kernel to create the future.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary-btn magnetic">View Work</a>
+                    <a href="#contact" class="btn secondary-btn magnetic">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-frame">
+                    <img src="profilephoto.jpeg" alt="Vimal Rana">
+                    <div class="frame-corner top-left"></div>
+                    <div class="frame-corner bottom-right"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title scramble-text" data-value="Projects">Projects</h2>
+            <div class="projects-grid">
+                <!-- HerbBuddy Card -->
+                <div class="project-card">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>HerbBuddy</h3>
+                            <span class="mono-tag">v1.0.0</span>
+                        </div>
+                        <p class="project-desc">AI-powered herbal medicine application helping users identify herbs and
+                            their medicinal properties.</p>
+                        <div class="tech-stack">
+                            <span>React Native</span>
+                            <span>AI</span>
+                            <span>Expo</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/vimalranacs/herbbuddy.git" target="_blank"
+                                class="text-link magnetic"><i class="fab fa-github"></i> Repository</a>
+                            <a href="https://github.com/vimalranacs/herbbuddy/releases/download/v1.0.0/HerbBuddy.apk"
+                                target="_blank" class="text-link magnetic"><i class="fab fa-android"></i> APK</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2 class="section-title scramble-text" data-value="Experience">Experience</h2>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <div class="exp-date mono-text">2024 - Present</div>
+                    <div class="exp-details">
+                        <h3>Anox Consultancy</h3>
+                        <p class="role mono-text">Managing Developer & Website Manager</p>
+                        <p>Leading development and managing the official startup website.</p>
+                        <a href="https://anoxconsultancy.in/" target="_blank" class="text-link magnetic">Visit Website
+                            &nearr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title scramble-text" data-value="Technical_Skills">Technical_Skills</h2>
+
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3 class="mono-text">// Development</h3>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-label">
+                            <span>Web Development</span>
+                            <span class="percentage">90%</span>
+                        </div>
+                        <div class="progress-line" data-width="90%"></div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-label">
+                            <span>React Native & Expo</span>
+                            <span class="percentage">85%</span>
+                        </div>
+                        <div class="progress-line" data-width="85%"></div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-label">
+                            <span>App Development</span>
+                            <span class="percentage">80%</span>
+                        </div>
+                        <div class="progress-line" data-width="80%"></div>
+                    </div>
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-label">
+                            <span>Git & GitHub</span>
+                            <span class="percentage">85%</span>
+                        </div>
+                        <div class="progress-line" data-width="85%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="mono-text">// Creative_&_Soft</h3>
+                    <div class="tags-cloud">
+                        <span class="tag">AI Content Creation</span>
+                        <span class="tag">Video Production</span>
+                        <span class="tag">Public Speaking</span>
+                        <span class="tag">Communication</span>
+                        <span class="tag">Leadership</span>
+                        <span class="tag">Problem Solving</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title scramble-text" data-value="Connect">Connect</h2>
+            <div class="social-grid">
+                <a href="https://github.com/vimalranacs" target="_blank" class="social-btn magnetic">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/vimal-rana-0215621b6" target="_blank" class="social-btn magnetic">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://www.instagram.com/_vimal_rana_" target="_blank" class="social-btn magnetic">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="mono-text">Designed & Built by Vimal Rana</p>
+        <p class="mono-text copyright">&copy; 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
