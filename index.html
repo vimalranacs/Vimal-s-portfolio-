@@ -14,6 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="//www.instagram.com/embed.js"></script>
 </head>
 
 <body>
@@ -32,6 +33,7 @@
             <li><a href="#projects" class="hover-link" data-value="Projects">Projects</a></li>
             <li><a href="#experience" class="hover-link" data-value="Experience">Experience</a></li>
             <li><a href="#skills" class="hover-link" data-value="Skills">Skills</a></li>
+            <li><a href="#content" class="hover-link" data-value="Content">Content</a></li>
             <li><a href="#contact" class="hover-link" data-value="Contact">Contact</a></li>
         </ul>
         <div class="hamburger">
@@ -228,6 +230,90 @@
         </div>
     </section>
 
+    <!-- Content Creation Section -->
+    <section id="content" class="content-section">
+        <div class="container">
+            <h2 class="section-title scramble-text" data-value="Content">Content</h2>
+            <p class="content-intro mono-text">// Experimenting with content creation across platforms — philosophy, politics & ideas that matter.</p>
+
+            <div class="content-platforms">
+
+                <!-- YouTube Card -->
+                <div class="platform-card yt-card">
+                    <div class="platform-header">
+                        <div class="platform-icon-wrap yt-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div>
+                            <h3>YouTube</h3>
+                            <span class="mono-text platform-handle">@vimalrana8031</span>
+                        </div>
+                    </div>
+                    <p class="platform-desc">Experimenting with long-form and short content — tech, AI, philosophy and life topics. A creative lab in progress.</p>
+                    <div class="platform-tags">
+                        <span>Tech</span><span>AI</span><span>Philosophy</span><span>Life</span>
+                    </div>
+                    <div class="platform-actions">
+                        <a href="https://youtube.com/@vimalrana8031" target="_blank" class="btn primary-btn platform-btn magnetic">
+                            <i class="fab fa-youtube"></i> Visit Channel
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Instagram Fair Philosophy Card -->
+                <div class="platform-card ig-card">
+                    <div class="platform-header">
+                        <div class="platform-icon-wrap ig-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div>
+                            <h3>Fair Philosophy</h3>
+                            <span class="mono-text platform-handle">@fairphilosophy</span>
+                        </div>
+                    </div>
+                    <p class="platform-desc">A dedicated page for short, sharp, informative content on philosophy, politics, psychology and the world's most interesting ideas.</p>
+                    <div class="platform-tags">
+                        <span>Philosophy</span><span>Politics</span><span>Psychology</span><span>Ideas</span>
+                    </div>
+
+                    <!-- QR Code + Actions row -->
+                    <div class="ig-bottom">
+                        <div class="qr-wrap">
+                            <div class="qr-frame">
+                                <img src="fairphilosophyinstagramacoountqr.jpeg" alt="Fair Philosophy QR Code" class="qr-img">
+                            </div>
+                            <span class="mono-text qr-label">Scan to follow</span>
+                        </div>
+                        <div class="platform-actions ig-actions">
+                            <a href="https://www.instagram.com/fairphilosophy" target="_blank" class="btn primary-btn platform-btn magnetic">
+                                <i class="fab fa-instagram"></i> Follow Page
+                            </a>
+                            <button class="btn secondary-btn platform-btn magnetic" id="watch-reel-btn" onclick="openReelModal()">
+                                <i class="fas fa-play"></i> Watch Reel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Reel Modal -->
+    <div class="reel-modal-overlay" id="reel-modal" onclick="closeReelModal(event)">
+        <div class="reel-modal-box">
+            <button class="reel-close" onclick="closeReelModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="reel-player-header">
+                <span class="mono-text">// @fairphilosophy &mdash; Latest Reel</span>
+            </div>
+            <div class="reel-embed-wrap" id="reel-embed-wrap">
+                <!-- Instagram embed injected here by JS -->
+            </div>
+        </div>
+    </div>
+
     <!-- Social Section -->
     <section id="contact" class="contact-section">
         <div class="container">
@@ -245,6 +331,14 @@
                     <i class="fab fa-instagram"></i>
                     <span>Instagram</span>
                 </a>
+                <a href="https://youtube.com/@vimalrana8031" target="_blank" class="social-btn magnetic">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                </a>
+                <a href="https://www.instagram.com/fairphilosophy" target="_blank" class="social-btn magnetic">
+                    <i class="fas fa-feather-alt"></i>
+                    <span>Philosophy</span>
+                </a>
             </div>
         </div>
     </section>
@@ -256,6 +350,31 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function openReelModal() {
+            const modal = document.getElementById('reel-modal');
+            const wrap = document.getElementById('reel-embed-wrap');
+            // Inject embed fresh each time so it re-initialises
+            wrap.innerHTML = `
+                <blockquote class="instagram-media"
+                    data-instgrm-permalink="https://www.instagram.com/reel/DXWczw1gal_/"
+                    data-instgrm-version="14"
+                    style="background:#0b0b0b; border:0; border-radius:0; max-width:100%; min-width:260px; width:100%;">
+                </blockquote>`;
+            if (window.instgrm) window.instgrm.Embeds.process();
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeReelModal(e) {
+            if (e && e.target !== document.getElementById('reel-modal') && !e.target.closest('.reel-close')) return;
+            const modal = document.getElementById('reel-modal');
+            modal.classList.remove('active');
+            document.getElementById('reel-embed-wrap').innerHTML = '';
+            document.body.style.overflow = '';
+        }
+        // ESC key to close
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeReelModal({target: document.getElementById('reel-modal')}); });
+    </script>
 </body>
 
 </html>

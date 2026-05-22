@@ -661,6 +661,265 @@ footer {
     margin-top: 10px;
 }
 
+/* =========================================
+   CONTENT CREATION SECTION
+   ========================================= */
+.content-section {
+    padding: 100px 0;
+}
+
+.content-intro {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 60px;
+    letter-spacing: 0.5px;
+}
+
+.content-platforms {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Platform Card base */
+.platform-card {
+    background: var(--secondary-bg);
+    border: 1px solid #1e1e1e;
+    padding: 40px;
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.platform-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.yt-card::before  { background: #ff0000; }
+.ig-card::before  { background: linear-gradient(90deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+
+.platform-card:hover::before { transform: scaleX(1); }
+
+.yt-card:hover  { border-color: rgba(255,0,0,0.35); box-shadow: 0 0 30px rgba(255,0,0,0.08); transform: translateY(-4px); }
+.ig-card:hover  { border-color: rgba(220,39,67,0.35); box-shadow: 0 0 30px rgba(220,39,67,0.08); transform: translateY(-4px); }
+
+/* Platform header */
+.platform-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.platform-icon-wrap {
+    width: 52px; height: 52px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid #2a2a2a;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    transition: all 0.3s;
+}
+
+.yt-icon  { color: #ff0000; }
+.ig-icon  { color: #e1306c; }
+
+.platform-card:hover .platform-icon-wrap {
+    border-color: currentColor;
+    box-shadow: 0 0 15px currentColor;
+}
+
+.platform-header h3 {
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+}
+
+.platform-handle {
+    color: #555;
+    font-size: 0.8rem;
+}
+
+.platform-desc {
+    color: #999;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+/* Platform topic tags */
+.platform-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+.platform-tags span {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    border: 1px solid #2a2a2a;
+    padding: 4px 12px;
+    color: #666;
+    background: rgba(255,255,255,0.02);
+}
+
+.platform-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    padding: 12px 22px;
+}
+
+/* Instagram card bottom: QR + buttons side-by-side */
+.ig-bottom {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 10px;
+}
+
+.ig-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+/* QR Code */
+.qr-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.qr-frame {
+    width: 110px; height: 110px;
+    border: 1px solid #2a2a2a;
+    padding: 6px;
+    background: #fff;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.qr-frame::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.ig-card:hover .qr-frame::after {
+    border-color: #e1306c;
+    box-shadow: 0 0 18px rgba(225, 48, 108, 0.3);
+}
+
+.qr-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.qr-label {
+    font-size: 0.7rem;
+    color: #555;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   REEL MODAL
+   ========================================= */
+.reel-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9990;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.reel-modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.reel-modal-box {
+    background: #0d0d0d;
+    border: 1px solid #2a2a2a;
+    width: 420px;
+    max-width: 95vw;
+    position: relative;
+    transform: translateY(30px) scale(0.97);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 0 60px rgba(0,243,255,0.06);
+}
+
+.reel-modal-overlay.active .reel-modal-box {
+    transform: translateY(0) scale(1);
+}
+
+.reel-player-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid #1e1e1e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reel-player-header span {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.reel-close {
+    position: absolute;
+    top: 12px; right: 16px;
+    background: transparent;
+    border: 1px solid #2a2a2a;
+    color: #aaa;
+    width: 34px; height: 34px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.reel-close:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(0,243,255,0.2);
+}
+
+.reel-embed-wrap {
+    padding: 0;
+    background: #0b0b0b;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reel-embed-wrap .instagram-media {
+    margin: 0 auto !important;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .hero-content {
@@ -711,5 +970,24 @@ footer {
     .strengths-section {
         margin-top: 50px;
         padding-top: 40px;
+    }
+
+    .content-platforms {
+        grid-template-columns: 1fr;
+    }
+
+    .ig-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .ig-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .reel-modal-box {
+        width: 95vw;
     }
 }
